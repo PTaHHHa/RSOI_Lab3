@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="../css/index.css" rel="stylesheet">
+</head>
+<body>
+<div class="header">
+    <header>
+        <img class="header_img" src="../resource/med_1487009767_image.jpg">
+    </header>
+</div>
+<div class="form">
+    <form name="form">
+        <p>Как вы относитесь к нашему магазинусу?</p>
+        <label for="name">Представьтесь по форме</label><br>
+        <input type="text" id="name"/><br><br>
+
+        <label>Пол: </label>
+        <input type="radio" name="sex" value="Мужчина" checked="checked">Мужчина</input>
+        <input type="radio" name="sex" value="Женщина">Женщина</input>
+
+        <p>Как вы попали в наш магазин?</p>
+        <input list="choice1">
+        <datalist id="choice1">
+            <option value="Первый">
+            <option value="Второй">
+            <option value="Третий">
+            <option value="Четвёртый">
+            <option value="Пятый">
+        </datalist>
+        <br>
+        <br>
+        <p>Предпочтения</p>
+        <label for="choice1">Выберите мебель: </label>
+        <input type="radio" name="furniture" value="Столы" checked="checked">Столы</input>
+        <input type="radio" name="furniture" value="Стулья">Стулья</input>
+        <input type="radio" name="furniture" value="Комоды">Комоды</input><br>
+        <p>Выберите тип мебели</p>
+        <input list="choice2">
+        <datalist id="choice2">
+            <option value="Первый">
+            <option value="Второй">
+            <option value="Третий">
+            <option value="Четвёртый">
+            <option value="Пятый">
+        </datalist>
+        <br><br>
+        <p>Ваш комментарий</p>
+        <textarea placeholder="cool!"></textarea><br><br>
+        <label for="checkbox">Посоветуете ли вы магазин своим знакомым?</label>
+        <input id="checkbox" type="checkbox">Да </input>
+
+
+        <br><br>
+        <button type="reset" onclick="othername(); ">Субмит</button>
+        <button type="button" onclick="clear(); ">Клир</button>
+        <button type="reset" onclick="reset(); ">Очистить</button>
+    </form>
+</div>
+<div class="footer">
+    <footer>
+        <img class="footer_img" src="../resource/med_1487009767_image.jpg">
+    </footer>
+</div>
+</body>
+<script type="text/javascript">
+    var data = JSON.parse(localStorage.getItem('sex')) || [];
+
+    function othername() {
+
+        var sex_value = document.querySelector("input[name='sex']:checked").value;
+        data.push(sex_value)
+        localStorage.setItem('sex', JSON.stringify(data))
+        window.location.href = "../html/result.html"
+    }
+
+    function clear() {
+        while (data.length > 0){
+            data.pop()
+        }
+        console.log('something')
+        alert(data)
+    }
+
+    function reset() {
+        location.reload()
+    }
+</script>
+</html>
