@@ -66,20 +66,30 @@
 
 table{
     width: 880px;
+    border-collapse: collapse;
 }
 
+table,th,td{
+    border: 2px solid black;
+}
 
-/*var name = JSON.parse(localStorage.getItem('name')) || [];*/
-/*    // var sex = JSON.parse(localStorage.getItem('sex')) || [];*/
-/*    // var week = JSON.parse(localStorage.getItem('week')) || [];*/
+td{
+    position: relative;
+    text-align: center;
+}
 
-/*    function othername() {*/
-/*        var name_value = document.getElementById("name").value;*/
-/*        // var sex_value = document.querySelector("input[name='sex']:checked").value;*/
-/*        // var week_value = document.getElementById("week").value;*/
-/*        name.push(name_value)*/
-/*        // sex.push(sex_value)*/
-/*        // week.push(week_value)*/
-/*        localStorage.setItem('name', JSON.stringify(name))*/
-/*        // localStorage.setItem('sex', JSON.stringify(sex))*/
-/*        // localStorage.setItem('week', JSON.stringify(week))*/
+.clearAll{
+    position: relative;
+    left: 550px;
+    top: -150px;
+    width: 500px;
+    height: 50px;
+}
+
+.close{
+    position: relative;
+    left: 46px;
+    top: -220px;
+    width: 500px;
+    height: 50px;
+}

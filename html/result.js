@@ -9,7 +9,7 @@ window.addEventListener('load', () => {
 
     var table = document.getElementById("myTable");
     for (var i = 0; i < sex_item.length; i++) {
-        var row = table.insertRow(i+1);
+        var row = table.insertRow(i + 1);
         var name_cell = row.insertCell(0);
         var sex_cell = row.insertCell(1);
         var week_cell = row.insertCell(2);
@@ -23,7 +23,6 @@ window.addEventListener('load', () => {
         furniture_cell.innerHTML = furniture_item[i];
         range_cell.innerHTML = range_item[i];
         color_cell.style.backgroundColor = color_item[i]
-        // color_cell.innerHTML = color_item[i];
         checkbox_cell.innerHTML = checkbox_item[i];
     }
 
@@ -34,4 +33,9 @@ window.addEventListener('load', () => {
 function clearAll() {
     localStorage.clear();
     window.location.reload()
+}
+
+function close() {
+    window.open('', '_parent', '');
+    window.close();
 }
